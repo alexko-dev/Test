@@ -1,0 +1,17 @@
+<div class="products">
+    <div class="rows">
+    [[!pdoPage?
+        &element=`pdoResources`
+        &parents=`ID`
+        &limit=`30`
+        &tpl=`@INLINE <div>[[+pagetitle]]</div>`
+        &includeTVs=`cat`
+        &tvPrefix=``
+        &where=`["FIND_IN_SET([[*id]], REPLACE(TVcat.value, '||', ',')) > 0"]`
+    ]]
+    </div>
+
+    <div class="pagination">
+        [[!+page.nav]]
+    </div>
+</div>
